@@ -1,4 +1,4 @@
-name: Go
+name: backend
 
 on:
   push:
@@ -9,7 +9,7 @@ defaults:
   run:
     working-directory: services/backend
 jobs:
-  Backend CI:
+  continuousIntegration:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
