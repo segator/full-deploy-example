@@ -30,10 +30,11 @@ Continuous Integration of helloworld applications happens on github using github
 ## Installation
 
 ### Prerequisites
-1. terraform v0.13.5 [download](https://releases.hashicorp.com/terraform/0.13.5/)
-2. aws cli installed and configured with an account [details](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-3. aws-iam-authenticator installed [details](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-4. kubectl [details](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/)
+1. make
+2. terraform v0.13.5 [download](https://releases.hashicorp.com/terraform/0.13.5/)
+3. aws cli installed and configured with an account [details](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+4. aws-iam-authenticator installed [details](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+5. kubectl [details](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/)
 
 ### Instructions
 ```
@@ -60,7 +61,8 @@ make test
 ```
 At this point you have the cluster with the application up and running!
 
-Terraform will output your kubeconfig and application URL on output folder
+Terraform will output your kubeconfig and application URL on ```output``` folder
+or just execute
 
 ### Destroying all the infrastructure
 ```
