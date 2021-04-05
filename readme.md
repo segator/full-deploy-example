@@ -51,4 +51,4 @@ make destroy
 ```
 
 ## Production notes
-Go to [Production notes](./Production.md) for more details about production readiness.
+Go to [Production notes](./production.md) for more details about production readiness.

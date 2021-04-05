@@ -55,4 +55,11 @@ We can be configure the listen port using env var ```HELLO_LISTEN_PORT``` *(defa
 
 
 ## Continuous Integration
-a public image is generated every time a commit on branch master happens using github actions. check [here](./github/workflows/)
+a public image is generated every time a commit on branch master happens using github actions.
+
+In case you want to  fork the project, remember
+to add the next variables on your github workflows.
+```
+DOCKERHUB_USERNAME=<docker hub user>
+DOCKERHUB_TOKEN<docker hub password or token>
+```
