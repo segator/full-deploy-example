@@ -9,3 +9,11 @@ variable "cluster_name" {
 variable "instance_type" {
   default = "t3.small"
 }
+
+variable "num_workers" {
+  default = 1
+}
+
+variable "max_workers" {
+  default = 3
+}

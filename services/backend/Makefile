@@ -28,5 +28,3 @@ publish: container
 	docker login "${REGISTRY}"
 	docker tag $(APP) ${REGISTRY}/${IMAGE_PATH}/$(APP)
 	docker push  ${REGISTRY}/${IMAGE_PATH}/$(APP)
-
-

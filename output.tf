@@ -5,6 +5,7 @@ output "application_endpoint" {
 output "k8s_cluster_endpoint" {
   value = module.eks.cluster_endpoint
 }
+
 output "k8s_kubeconfig" {
   value = module.eks.kubeconfig
 }

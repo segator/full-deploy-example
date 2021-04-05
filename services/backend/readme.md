@@ -1,4 +1,9 @@
 # Backend Service
+
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/segator/full-deploy-example/backend/master)
+![Docker Pulls](https://img.shields.io/docker/pulls/segator/helloworld)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/segator/helloworld)
+
 This application have a simple endpoint ```/helloworld``` that returns ```{ "hello": "world" }```
 
 It supports standards healthchecks for kubernetes
@@ -63,3 +68,5 @@ to add the next variables on your github workflows.
 DOCKERHUB_USERNAME=<docker hub user>
 DOCKERHUB_TOKEN<docker hub password or token>
 ```
+
+you can see the pipeline definition in the file ```.github/workflows/backend.yml```
