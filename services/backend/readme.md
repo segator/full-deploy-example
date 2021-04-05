@@ -52,3 +52,7 @@ make publish IMAGE_PATH=segator REGISTRY=registry.hub.docker.com
 
 ## Configure
 We can be configure the listen port using env var ```HELLO_LISTEN_PORT``` *(default 8000)*
+
+
+## Continuous Integration
+a public image is generated every time a commit on branch master happens using github actions. check [here](./github/workflows/)

@@ -1,0 +1,45 @@
+replicaCount: 5
+
+image:
+  repository: segator/helloworld
+  pullPolicy: Always
+
+nameOverride: "backend-app"
+fullnameOverride: "backend"
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: false
+  annotations: 
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/certificate-arn: ''
+  hosts:
+    - paths:
+      - path: /*
+        backend: 
+          serviceName: ssl-redirect
+          servicePort: use-annotation            
+      - path: /*
+        backend:
+          serviceName: backend
+          servicePort: http
+resources:
+  limits:
+    cpu: 100m
+    memory: 64Mi
+  requests:
+    cpu: 50m
+    memory: 32Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
